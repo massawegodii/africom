@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { HomeComponent } from './components/home/home.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    HomeComponent
+    HomeComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
