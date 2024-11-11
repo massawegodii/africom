@@ -1,1 +1,177 @@
-<p>home works!</p>
+<section class="bg-green-900 text-white p-4 lg:px-12 lg:py-8">
+    <!-- Header -->
+    <div class="flex flex-col lg:flex-row items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <div class="bg-green-600 rounded-full h-12 w-12 flex items-center justify-center text-2xl font-bold">
+          G
+        </div>
+        <div>
+          <h1 class="text-lg font-semibold">Welcome, Godfrey</h1>
+          <p class="text-sm text-gray-200">You are not signed in</p>
+        </div>
+      </div>
+      <div class="flex space-x-4 mt-4 lg:mt-0">
+        <button 
+          class="bg-white text-green-700 font-normal py-1 px-5 rounded-full hover:bg-gray-100 focus:outline-none transition-transform duration-200" 
+          (click)="openModal('login')">
+          Login
+        </button>
+        <button 
+          class="bg-white text-green-700 font-normal py-1 px-5 rounded-full hover:bg-gray-100 focus:outline-none transition-transform duration-200" 
+          (click)="openModal('signup')">
+          Signup
+        </button>
+      </div>
+      
+    </div>
+  
+
+  </section>
+  
+  <section class="p-4 lg:px-12 lg:py-8">
+    <!-- Category Filters -->
+     <div class="flex space-x-4 overflow-x-auto mb-6">
+      <button 
+        class="py-2 px-4 rounded-full text-sm transition duration-200"
+        [ngClass]="{
+          'bg-green-500 text-white': selectedCategory === 'all',
+          'text-gray-600 hover:bg-green-500 hover:text-white': selectedCategory !== 'all'
+        }"
+        (click)="selectCategory('all')">
+        All
+      </button>
+  
+      <button 
+        class="py-2 px-4 rounded-full text-sm transition duration-200"
+        [ngClass]="{
+          'bg-green-500 text-white': selectedCategory === 'dashboard',
+          'text-gray-600 hover:bg-green-500 hover:text-white': selectedCategory !== 'dashboard'
+        }"
+        (click)="selectCategory('dashboard')">
+        Dashboard
+      </button>
+  
+      <button 
+        class="py-2 px-4 rounded-full text-sm transition duration-200"
+        [ngClass]="{
+          'bg-green-500 text-white': selectedCategory === 'payments',
+          'text-gray-600 hover:bg-green-500 hover:text-white': selectedCategory !== 'payments'
+        }"
+        (click)="selectCategory('payments')">
+        Payments
+      </button>
+  
+      <button 
+        class="py-2 px-4 rounded-full text-sm transition duration-200"
+        [ngClass]="{
+          'bg-green-500 text-white': selectedCategory === 'users',
+          'text-gray-600 hover:bg-green-500 hover:text-white': selectedCategory !== 'users'
+        }"
+        (click)="selectCategory('users')">
+        Users
+      </button>
+    </div>
+
+  <!-- Card Section -->
+  <div 
+    *ngIf="selectedCategory !== 'payments' && selectedCategory !== 'users'" 
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-opacity duration-500 ease-in-out opacity-100" 
+    [ngClass]="{ 'opacity-0': selectedCategory === 'payments' || selectedCategory === 'users'}">
+
+    <!-- Card  -->
+    <div class="bg-white cursor-pointer rounded-lg shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:bg-green-100">
+      <div class="text-green-700 mb-4 hover:text-green-900">
+        <i class="fas fa-lock fa-2x"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-800 hover:text-green-800">Authorization</h3>
+      <p class="text-gray-600 text-sm mb-4">Gives you a time-bound access token to call allowed APIs.</p>
+      <button class="bg-green-500 text-white py-2 px-4 rounded-full text-sm hover:bg-green-600">Learn more</button>
+    </div>
+
+    <div class="bg-white cursor-pointer rounded-lg shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:bg-green-100">
+      <div class="text-green-700 mb-4 hover:text-green-900">
+        <i class="fas fa-qrcode fa-2x"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-800 hover:text-green-800">Dynamic QR</h3>
+      <p class="text-gray-600 text-sm mb-4">Generates a dynamic M-PESA QR Code.</p>
+      <button class="bg-green-500 text-white py-2 px-4 rounded-full text-sm hover:bg-green-600">Learn more</button>
+    </div>
+
+
+    <div class="bg-white cursor-pointer rounded-lg shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:bg-green-100">
+      <div class="text-green-700 mb-4 hover:text-green-900">
+        <i class="fas fa-shopping-cart fa-2x"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-800 hover:text-green-800">M-Pesa Express</h3>
+      <p class="text-gray-600 text-sm mb-4">Merchant initiated online payments.</p>
+      <button class="bg-green-500 text-white py-2 px-4 rounded-full text-sm hover:bg-green-600">Learn more</button>
+    </div>
+
+
+    <div class="bg-white cursor-pointer rounded-lg shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:bg-green-100">
+      <div class="text-green-700 mb-4 hover:text-green-900">
+        <i class="fas fa-building fa-2x"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-800 hover:text-green-800">Customer To Business (C2B)</h3>
+      <p class="text-gray-600 text-sm mb-4">Register URL for Validation/Confirmation and Simulate transaction.</p>
+      <button class="bg-green-500 text-white py-2 px-4 rounded-full text-sm hover:bg-green-600">Learn more</button>
+    </div>
+
+
+    <div class="bg-white cursor-pointer rounded-lg shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:bg-green-100">
+      <div class="text-green-700 mb-4 hover:text-green-900">
+        <i class="fas fa-exchange-alt fa-2x"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-800 hover:text-green-800">Business To Customer (B2C)</h3>
+      <p class="text-gray-600 text-sm mb-4">Transact between an M-Pesa short code to a phone number registered on M-Pesa.</p>
+      <button class="bg-green-500 text-white py-2 px-4 rounded-full text-sm hover:bg-green-600">Learn more</button>
+    </div>
+
+
+    <div class="bg-white cursor-pointer rounded-lg shadow-md p-6 flex flex-col items-center text-center transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:bg-green-100">
+      <div class="text-green-700 mb-4 hover:text-green-900">
+        <i class="fas fa-check-circle fa-2x"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-800 hover:text-green-800">Transaction Status</h3>
+      <p class="text-gray-600 text-sm mb-4">Check the status of a transaction.</p>
+      <button class="bg-green-500 text-white py-2 px-4 rounded-full text-sm hover:bg-green-600">Learn more</button>
+    </div>
+  </div>
+
+  </section>
+  
+
+  <!-- Login Modal -->
+<div 
+*ngIf="isLoginModalOpen" 
+class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+(click)="closeModal()">
+<div 
+  class="bg-white rounded-lg p-8 w-80 transform transition-transform duration-300 scale-0 modal-animation" 
+  (click)="$event.stopPropagation()">
+  <h2 class="text-2xl font-bold text-center mb-4">Login</h2>
+  <form>
+    <input type="text" placeholder="Username" class="border p-2 rounded w-full mb-3" />
+    <input type="password" placeholder="Password" class="border p-2 rounded w-full mb-3" />
+    <button type="submit" class="bg-green-500 text-white py-2 px-4 rounded-full w-full hover:bg-green-600">Login</button>
+  </form>
+</div>
+</div>
+
+<!-- Signup Modal -->
+<div 
+*ngIf="isSignupModalOpen" 
+class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+(click)="closeModal()">
+<div 
+  class="bg-white rounded-lg p-8 w-80 transform transition-transform duration-300 scale-0 modal-animation" 
+  (click)="$event.stopPropagation()">
+  <h2 class="text-2xl font-bold text-center mb-4">Signup</h2>
+  <form>
+    <input type="text" placeholder="Username" class="border p-2 rounded w-full mb-3" />
+    <input type="email" placeholder="Email" class="border p-2 rounded w-full mb-3" />
+    <input type="password" placeholder="Password" class="border p-2 rounded w-full mb-3" />
+    <button type="submit" class="bg-green-500 text-white py-2 px-4 rounded-full w-full hover:bg-green-600">Signup</button>
+  </form>
+</div>
+</div>

@@ -1,0 +1,35 @@
+.card-zoom-effect {
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center;
+  }
+  
+  .card-zoom-effect:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    background-color: #E6FFFA;
+  }
+  
+
+  .modal-animation {
+    transform: scale(0);
+  }
+  .modal-animation.scale-100 {
+    transform: scale(1);
+  }
+  .modal-animation {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .opacity-0 {
+    opacity: 0;
+  }
+  .opacity-100 {
+    opacity: 1;
+  }
+  
+  .table-responsive {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
