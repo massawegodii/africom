@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './explore.component.scss'
 })
 export class ExploreComponent {
+
   stations = [
     { id: 'A1', name: 'Gas Station 1', address: 'Makumbusho', status: 'In Transit' },
     { id: 'A3', name: 'Petrol Station 2', address: 'Sinza', status: 'No Connection' },
