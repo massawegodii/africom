@@ -7,15 +7,15 @@ import { Component } from '@angular/core';
 })
 export class ExploreComponent {
   stations = [
-    { id: 'B16495', name: 'Gas Station 1', address: '123 Main St, Cityville', status: 'In Transit' },
-    { id: 'B16463', name: 'Petrol Station 2', address: '456 Elm St, Cityville', status: 'No Connection' },
-    { id: 'B16555', name: 'Gas Station 3', address: '789 Oak St, Townsville', status: 'In Transit' },
-    { id: 'B16531', name: 'Petrol Station 4', address: '101 Pine St, Metropolis', status: 'In Transit' },
+    { id: 'A1', name: 'Gas Station 1', address: 'Makumbusho', status: 'In Transit' },
+    { id: 'A3', name: 'Petrol Station 2', address: 'Sinza', status: 'No Connection' },
+    { id: 'A5', name: 'Gas Station 3', address: 'Mbezi', status: 'In Transit' },
+    { id: 'A7', name: 'Petrol Station 4', address: 'Mwenge', status: 'In Transit' },
   ];
 
   selectedStation = {
     name: 'Gas Station 1',
-    address: '123 Main St, Cityville',
+    address: 'Makumbusho',
     distance: 1.2,
     status: 'In Transit'
   };
