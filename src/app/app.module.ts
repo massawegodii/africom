@@ -8,6 +8,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users.component';
 import { ExploreComponent } from './components/explore/explore.component';
+import { TransportComponent } from './components/transport/transport.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ExploreComponent } from './components/explore/explore.component';
     WelcomeComponent,
     HomeComponent,
     UsersComponent,
-    ExploreComponent
+    ExploreComponent,
+    TransportComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,43 @@
+<div class="p-4">
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
+        <thead class="bg-gray-100 text-gray-600 text-xs font-semibold">
+          <tr>
+            <th class="p-3 text-left border-b">Request Date</th>
+            <th class="p-3 text-left border-b">Overtime Date</th>
+            <th class="p-3 text-left border-b">Employee</th>
+            <th class="p-3 text-left border-b">Duration</th>
+            <th class="p-3 text-left border-b">Overtime</th>
+            <th class="p-3 text-left border-b">Reason</th>
+            <th class="p-3 text-center border-b">Action</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700 text-sm">
+          <tr *ngFor="let request of requests" class="hover:bg-gray-50 transition">
+            <td class="p-3 border-b">{{ request.requestDate }}</td>
+            <td class="p-3 border-b">{{ request.overtimeDate }}</td>
+            <td class="p-3 border-b flex items-center space-x-2">
+              <img [src]="request.employee.avatar" alt="Avatar" class="w-8 h-8 rounded-full" />
+              <span>{{ request.employee.name }}</span>
+            </td>
+            <td class="p-3 border-b">{{ request.duration }}</td>
+            <td class="p-3 border-b">{{ request.overtime }}</td>
+            <td class="p-3 border-b">{{ request.reason }}</td>
+            <td class="p-3 border-b text-center">
+              <div *ngIf="request.status === 'Pending'" class="flex justify-center space-x-2">
+                <button class="bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-green-600 transition">
+                  Approve
+                </button>
+                <button class="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600 transition">
+                  Reject
+                </button>
+              </div>
+              <span *ngIf="request.status === 'Approved'" class="text-green-600 font-semibold">✔ Approved</span>
+              <span *ngIf="request.status === 'Rejected'" class="text-red-600 font-semibold">✖ Rejected</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
